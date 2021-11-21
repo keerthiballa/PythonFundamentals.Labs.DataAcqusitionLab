@@ -15,8 +15,7 @@ for i in range(39):
     response = requests.get(url, headers=my_headers)
 
     data = response.json()
-    json.dumps(data)
-    jsonFile = open("./NOAA_results/locations_"+str(i)+".json","w")
-    jsonFile.write(str(data))
+    jsonFile = open("./PythonFundamentals.Labs.DataAcqusitionLab/NOAA_results/locations_"+str(i)+".json","w")
+    json.dump(data, jsonFile)
     jsonFile.close()
     j+=1000
