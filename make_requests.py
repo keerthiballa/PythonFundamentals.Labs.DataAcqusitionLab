@@ -6,7 +6,7 @@ import requests
 #data = json.loads(response.read().decode())
 #print(data)
 
-j=0
+j=1
 
 for i in range(39):
     url = "https://www.ncdc.noaa.gov/cdo-web/api/v2/locations?offset="+str(j)+"&limit=1000"
@@ -15,7 +15,7 @@ for i in range(39):
     response = requests.get(url, headers=my_headers)
 
     data = response.json()
-    jsonFile = open("./PythonFundamentals.Labs.DataAcqusitionLab/NOAA_results/locations_"+str(i)+".json","w")
+    jsonFile = open("./NOAA_results/locations_"+str(i)+".json","w")
     json.dump(data, jsonFile)
     jsonFile.close()
     j+=1000
